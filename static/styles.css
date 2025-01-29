@@ -1,0 +1,96 @@
+body {
+    background-color: rgb(33, 33, 33); 
+    color: #ffffff; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: rgb(45, 45, 45);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-button {
+    width: 60px; 
+    height: 60px; 
+    background-color: rgb(55, 55, 55); 
+    border-radius: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    cursor: pointer;
+    border: 2px solid transparent; 
+}
+
+.icon-button:hover {
+    background-color: rgb(75, 75, 75); 
+    transform: scale(1.1); 
+    border: 2px solid rgb(68, 133, 229); 
+}
+
+.icon-button img {
+    width: 40px; 
+    height: 40px;
+    object-fit: contain; 
+}
+
+.content {
+    margin-left: 220px; 
+    padding: 40px; 
+    text-align: center; 
+    min-height: calc(100vh - 80px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+h1 {
+    color: rgb(68, 133, 229); 
+    margin-bottom: 20px;
+}
+
+.list-group {
+    width: 100%; 
+    max-width: 600px; 
+    text-align: center; 
+}
+
+.list-group-item {
+    background-color: rgb(55, 55, 55);
+    border: none;
+    color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px; 
+    border-radius: 10px; 
+    transition: background-color 0.2s ease-in-out; 
+    text-align: center; 
+    display: block; 
+}
+
+.list-group-item:hover {
+    background-color: rgb(75, 75, 75); 
+}

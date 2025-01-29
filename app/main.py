@@ -1,12 +1,11 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles  # Импортируем StaticFiles
+from fastapi.staticfiles import StaticFiles
 from app.routers import ege, advanced
 
 app = FastAPI()
 
-# Подключаем роутеры
 app.include_router(ege.router, prefix="/ege", tags=["EGE"])
 app.include_router(advanced.router, prefix="/advanced", tags=["Advanced"])
 
@@ -14,7 +13,7 @@ app.include_router(advanced.router, prefix="/advanced", tags=["Advanced"])
 templates = Jinja2Templates(directory="app/templates")
 
 # Подключение статических файлов
-app.mount("/static", StaticFiles(directory="img"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/", response_class=HTMLResponse)
 def read_root(request: Request):
@@ -22,18 +21,8 @@ def read_root(request: Request):
 
 @app.get("/ege", response_class=HTMLResponse)
 async def get_ege_subjects(request: Request):
-    subjects = [
-        {"name": "Физика"},
-        {"name": "Математика"},
-        {"name": "Информатика"}
-    ]
-    return templates.TemplateResponse("ege.html", {"request": request, "subjects": subjects})
+    return templates.TemplateResponse("ege.html", {"request": request})
 
 @app.get("/advanced", response_class=HTMLResponse)
 async def get_advanced_subjects(request: Request):
-    subjects = [
-        {"name": "Физика"},
-        {"name": "Математика"},
-        {"name": "Информатика"}
-    ]
-    return templates.TemplateResponse("advanced.html", {"request": request, "subjects": subjects})
+    return templates.TemplateResponse("advanced.html", {"request": request})

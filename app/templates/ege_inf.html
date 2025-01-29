@@ -1,76 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информатика - Подготовка к ЕГЭ</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #343a40;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #212529;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 20px 0;
-        }
-        .logo {
-            width: 100px;
-            margin-bottom: 20px;
-        }
-        .icons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        .icons img {
-            width: 50px;
-            cursor: pointer;
-        }
-        .content {
-            margin-left: 270px;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Боковая панель -->
-    <div class="sidebar">
-        <div class="logo">
-            <img src="/static/logo.png" alt="Физматус" class="logo">
-        </div>
-        <div class="icons">
-            <a href="/ege"><img src="/static/math.png" alt="Математика" title="Математика"></a>
-            <a href="/ege/phys"><img src="/static/phys.png" alt="Физика" title="Физика"></a>
-            <a href="/ege/inf"><img src="/static/inf.png" alt="Информатика" title="Информатика"></a>
-        </div>
-    </div>
+{% extends "base.html" %}
 
-    <!-- Основной контент -->
-    <div class="content">
-        <h1>Информатика - Подготовка к ЕГЭ</h1>
-        <p>Здесь вы найдете материалы для подготовки к ЕГЭ по информатике.</p>
-        <ul>
-            <li><a href="#">Теория</a></li>
-            <li><a href="#">Практические задания</a></li>
-            <li><a href="#">Пробные варианты</a></li>
-        </ul>
-    </div>
+{% block title %}Информатика - Подготовка к ЕГЭ{% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% block content %}
+    <h1>Информатика - Подготовка к ЕГЭ</h1>
+    <p>Здесь вы найдете материалы для подготовки к ЕГЭ по информатике.</p>
+    <ul>
+        <li><a href="#">Теория</a></li>
+        <li><a href="#">Практические задания</a></li>
+        <li><a href="#">Пробные варианты</a></li>
+    </ul>
+{% endblock %}

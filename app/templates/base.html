@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Физматус{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+    </head>
+<body>
+    <!-- Боковая панель -->
+    <div class="sidebar">
+        <div class="logo">
+            <a href="/"><img src="/static/img/logo.png" alt="Физматус" class="logo"></a>
+        </div>
+        <div class="icons">
+            <a href="/ege/math" class="icon-button">
+                <img src="/static/img/math.png" alt="Математика" title="Математика">
+            </a>
+            <a href="/ege/phys" class="icon-button">
+                <img src="/static/img/phys.png" alt="Физика" title="Физика">
+            </a>
+            <a href="/ege/inf" class="icon-button">
+                <img src="/static/img/inf.png" alt="Информатика" title="Информатика">
+            </a>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

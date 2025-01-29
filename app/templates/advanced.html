@@ -1,84 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Углубленное изучение - Физматус</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #343a40;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #212529;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Иконки будут начинаться сверху */
-            padding: 20px 0;
-        }
-        .logo {
-            width: 100px;
-            margin-bottom: 20px;
-        }
-        .icons {
-            display: flex;
-            flex-direction: column; /* Вертикальное расположение иконок */
-            align-items: center;
-            gap: 15px; /* Расстояние между иконками */
-        }
-        .icons img {
-            width: 50px;
-            cursor: pointer;
-        }
-        .content {
-            margin-left: 270px;
-            padding: 20px;
-        }
-        .list-group-item {
-            background-color: #495057;
-            border: none;
-            color: #ffffff;
-        }
-        .list-group-item:hover {
-            background-color: #5c636a;
-        }
-    </style>
-</head>
-<body>
-    <!-- Боковая панель -->
-    <div class="sidebar">
-        <div class="logo">
-            <img src="/static/logo.png" alt="Физматус" class="logo">
-        </div>
-        <div class="icons">
-            <a href="/advanced/math"><img src="/static/math.png" alt="Математика" title="Математика"></a>
-            <a href="/advanced/phys"><img src="/static/phys.png" alt="Физика" title="Физика"></a>
-            <a href="/advanced/inf"><img src="/static/inf.png" alt="Информатика" title="Информатика"></a>
-        </div>
-    </div>
+{% extends "base.html" %}
 
-    <!-- Основной контент -->
-    <div class="content">
-        <h1>Углубленное изучение</h1>
-        <p>Выберите предмет для углубленного изучения:</p>
-        <div class="list-group">
-            {% for subject in subjects %}
-                <a href="#" class="list-group-item list-group-item-action">{{ subject.name }}</a>
-            {% endfor %}
-        </div>
-    </div>
+{% block title %}Углубленное изучение - Физматус{% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% block content %}
+    <h1>Углубленное изучение</h1>
+    <p>Выберите предмет для углубленного изучения:</p>
+    <div class="list-group">
+        <a href="/advanced/math" class="list-group-item list-group-item-action">Математика</a>
+        <a href="/advanced/phys" class="list-group-item list-group-item-action">Физика</a>
+        <a href="/advanced/inf" class="list-group-item list-group-item-action">Информатика</a>
+    </div>
+{% endblock %}
