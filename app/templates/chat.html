@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Чат с нейросетью - Физматус{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <h1>Чат с нейросетью</h1>
+    <!-- Окно чата -->
+    <div class="chat-box">
+        <div id="messages">
+            <!-- Сюда будут добавляться сообщения -->
+        </div>
+    </div>
+    <!-- Поле ввода -->
+    <div class="input-container">
+        <form id="chat-form" action="#" method="POST">
+            <input type="text" id="user-input" placeholder="Введите ваш вопрос..." required>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<!-- Подключение JavaScript -->
+<script src="/static/chat.js"></script>
+{% endblock %}
